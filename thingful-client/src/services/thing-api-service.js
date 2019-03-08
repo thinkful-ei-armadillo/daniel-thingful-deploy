@@ -3,7 +3,7 @@ import TokenService from './token-service';
 
 const ThingApiService = {
   getThings() {
-    return fetch(`${config.API_ENDPOINT}/things`, {
+    return fetch(`${config.API_ENDPOINT}/api/things`, {
       headers: {
       },
     })
@@ -14,7 +14,7 @@ const ThingApiService = {
       )
   },
   getThing(thingId) {
-    return fetch(`${config.API_ENDPOINT}/things/${thingId}`, {
+    return fetch(`${config.API_ENDPOINT}/api/things/${thingId}`, {
       headers: {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
@@ -26,7 +26,7 @@ const ThingApiService = {
       )
   },
   getThingReviews(thingId) {
-    return fetch(`${config.API_ENDPOINT}/things/${thingId}/reviews`, {
+    return fetch(`${config.API_ENDPOINT}/api/things/${thingId}/reviews`, {
       headers: {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
@@ -38,7 +38,7 @@ const ThingApiService = {
       )
   },
   postReview(thingId, text, rating) {
-    return fetch(`${config.API_ENDPOINT}/reviews`, {
+    return fetch(`${config.API_ENDPOINT}/api/reviews`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -58,4 +58,4 @@ const ThingApiService = {
   }
 }
 
-export default ThingApiService
+export default ThingApiService;
